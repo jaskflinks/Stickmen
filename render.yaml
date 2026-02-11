@@ -1,8 +1,12 @@
 services:
-  - type: web
-    name: stickman-video
-    env: static
+  - type: static
+    name: stickman-animation
+    runtime: static
     buildCommand: ""
-    startCommand: ""
     staticPublishPath: ./
+    pullRequestPreviews: false
     plan: free
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
